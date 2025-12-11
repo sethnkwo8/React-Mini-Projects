@@ -6,23 +6,25 @@ export default function useFetch(url) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        async function fetchUser() {
-            try {
-                setLoading(true);
-                const response = await fetch(url);
-                const data = await response.json();
-                const result = data.results[0].gender;
-                setData(result);
-            } catch (error) {
-                setError(error);
-            } finally {
-                setLoading(false);
-            }
+    async function fetchData() {
+        try {
+            setLoading(true);
+            setError(null);
+
+            const response = await fetch(url);
+            const data = await response.json();
+            setData(data);
+        } catch (error) {
+            setError(error);
+        } finally {
+            setLoading(false);
         }
-        fetchUser();
+    }
+
+    useEffect(() => {
+        fetchData()
     }, [url])
 
-    return { data, loading, error };
+    return { data, loading, error, refetch: fetchData };
 
 }
