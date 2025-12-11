@@ -1,11 +1,12 @@
 import useFetch from "./hooks/useFetch";
 import UserCard from "./components/UserCard";
 import FetchButton from "./components/FetchButton";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 export default function App() {
   const { data, loading, error, refetch } = useFetch('https://randomuser.me/api/');
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <LoadingSpinner />;
   if (error) return <h2>Something went wrong</h2>;
   if (!data) return null;
 
