@@ -19,6 +19,7 @@ export default function PostList() {
 
     if (loading) return <LoadingSpinner />;
     if (error) return <h2>Something went wrong!</h2>;
+    if (!data) return null;
     if (data) {
         const posts = data.map(item =>
             <PostItem key={item.id} title={item.title} body={item.body} />
