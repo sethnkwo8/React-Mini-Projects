@@ -25,5 +25,5 @@ export default function useFetchPosts(url) {
         fetchPosts();
     }, [url]);
 
-    return { data, loading, error, refresh: fetchPosts }
+    return { data, loading, error }
 }
