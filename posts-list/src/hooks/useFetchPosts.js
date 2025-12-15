@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useFetchPosts(url) {
+export default function useFetchPosts(url, page) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null)

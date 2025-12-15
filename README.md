@@ -58,7 +58,7 @@ React-Mini-Projects/
 │       └── App.jsx
 │       └── index.jsx
 │
-│── weather-app/
+│──movie-search/
 │   └── README.md      
 │   └── package.json
 │   └── public/
@@ -112,12 +112,12 @@ React-Mini-Projects/
 
 ---
 
-### **5. Weather App**
- - ✔️ Search for city
- - ✔️ Display weather data
- - ✔️ Loading animation
- - ✔️ Error handling
- - ✔️ Clean structure
+### **5. Movie Search App**
+ - ✔️ Uses Fetch API
+ - ✔️ Async/Await
+ - ✔️ Event Loop
+ - ✔️ Search movies using TMDb API
+ - ✔️ Clean Tailwind UI
 
 ---
 
