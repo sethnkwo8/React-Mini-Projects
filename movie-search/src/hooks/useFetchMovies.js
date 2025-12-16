@@ -1,29 +1,27 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function useFetchPosts(url) {
+export default function useFetchMovies(url) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null)
+    const [error, setError] = useState(null);
 
-    async function fetchPosts() {
+    async function fetchMovies() {
         try {
             setLoading(true);
             setError(null);
 
             const response = await fetch(url);
-            const data = await response.json()
+            const data = await response.json();
+
             setData(data);
         }
         catch (error) {
-            setError(error)
+            setError(error);
         }
         finally {
             setLoading(false);
         }
     }
-    useEffect(() => {
-        fetchPosts();
-    }, [url]);
 
-    return { data, loading, error }
+    return { data, loading, error, searchMovies: fetchMovies };
 }
