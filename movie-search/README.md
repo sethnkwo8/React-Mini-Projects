@@ -1,16 +1,111 @@
-# React + Vite
+# 🎬 Movie Search App
+A simple and responsive movie search application built with React that allows users to search for movies, TV shows, and people using The Movie Database (TMDB) API. The app supports pagination, loading states, and error handling.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🗂 Features
+- Search for movies, TV shows, and actors
+- Displays posters, titles, and release dates
+- Pagination support (next & previous pages)
+- Loading spinner while fetching data
+- Graceful error handling
+- Clean and responsive UI
 
-Currently, two official plugins are available:
+# 🛠 Tech Stack
+- React (with Vite)
+- Tailwind CSS for styling
+- Javascript ES6+
+- TMDB API
+- Custom React Hooks
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 📁 Project Structure
+```
+src/
+│
+├─ components/
+│  ├─ SearchBar.jsx      
+│  ├─ MovieList.jsx   
+│  ├─ MovieItem.jsx 
+│  ├─ Pagination.jsx 
+│  ├─ LoadingSpinner.jsx 
+│
+├─ hooks/
+│  └─ useFetchMovies.js
+│               
+├─ pages/
+│  └─ MovieSearch.jsx
+│               
+├─ utils/
+│  └─ onSubmit.js               
+│
+├─ App.jsx     
+├─ main.jsx              
+└─ output.css            
+```
 
-## React Compiler
+# ⚙️ How It Works
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- The user types a search term into the search bar.
+- On form submission, a request is made to the TMDB search endpoint.
+- Results are fetched using a custom hook (useFetchMovies).
+- Movies are rendered dynamically using reusable components.
+- Pagination allows navigation through result pages.
+- Search only runs when the user submits the form (not on every keystroke).
 
-## Expanding the ESLint configuration
+# 🔑 Environment Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1.	Create a free account on The Movie Database (TMDB)
+2.	Get your API key
+3.	Add the API key directly in the project (or via environment variables)
+
+Example API usage: 
+```code
+https://api.themoviedb.org/3/search/multi
+```
+
+# 📦 Installation
+
+### **1. Clone the Repository:**
+```bash
+git clone https://github.com/sethnkwo8/React-Mini-Projects
+cd movie-search
+```
+
+### **2. Install the dependencies:**
+```bash
+npm install
+```
+
+### **3. Install Tailwind CSS if not installed:**
+```bash
+npm install -D tailwindcss @tailwindcss/cli
+```
+
+### **4. Build your Tailwind CSS:**
+```bash
+npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+```
+
+### **5. Start the development server:**
+```bash
+npm run dev
+```
+
+### **6. Start the development server:**
+Open your browser at https://localhost:5173
+
+# 📌 What This Project Demonstrates
+- Controlled inputs and form handling
+- Custom React hooks for data fetching
+- API integration and pagination
+- State management with useState
+- Conditional rendering (loading & error states)
+- Component reusability and separation of concerns
+
+# 🔮 Possible Improvements
+- Add debounce to search input
+- Add movie detail page
+- Improve accessibility
+- Add caching for previous searches
+- Add TypeScript support
+
+# 📄 License
+This project is for learning and portfolio purposes

@@ -10,17 +10,15 @@ export default function MovieSearch() {
     const [query, setQuery] = useState('');
     const [searchTitle, setSearchTitle] = useState('');
     const [page, setPage] = useState(1);
-    const { data, loading, error, searchMovies } = useFetchMovies(`https://api.themoviedb.org/3/search/multi?api_key=${APIKey}&query=${query}&page=${page}`);
+    const { data, loading, error, searchMovies } = useFetchMovies(`https://api.themoviedb.org/3/search/multi?api_key=${APIKey}&query=${searchTitle}&page=${page}`, query);
 
     function onSubmit(e) {
         e.preventDefault();
-        if (query !== '') {
-            searchMovies();
-        }
+        if (!query) return;
 
+        setPage(1);
         setSearchTitle(query);
-
-        setQuery('');
+        searchMovies();
     }
 
     function previousPage() {
